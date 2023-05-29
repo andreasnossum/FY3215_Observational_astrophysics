@@ -1,0 +1,78 @@
+# 
+# Reduction file used                                = reduce1.red 
+# Version                                            = 19/12/2005 
+# Log file                                           = red_r.log 
+# Reduction started at                               = 11 May 2023, 12:51:15.00000 
+# Behaviour on facing problems                       = relaxed 
+# Cosmic ray cleaning disabled.
+# Extraction control                                 = 1 variable optimal 2.0 3.0 10.0 3.0 12.0 20.0 3.0 20.0 40.0 
+# Aperture radii                                     = radii taken from extraction lines 
+# Aperture reposition mode                           = reference_plus_tweak 
+# Aperture positions defined to be stable.
+# Aperture search half width                         = 35 
+# Aperture search fwhm                               = 14 
+# Aperture search max shift                          = 24 
+# Aperture tweak half width                          = 20 
+# Aperture tweak fwhm                                = 8 
+# Aperture tweak max shift                           = 5 
+# Aperture positions computed on the fly.
+# Profile fitting method                             = moffat 
+# Extraction weights                                 = gaussian 
+# Default value of FWHM for profile fits             = 8 
+# Profile fit half-width                             = 35 
+# Symmetric profile fits used.
+# Default value of beta exponent for moffat fits     = 3 
+# Sigma rejection threshold for profile fits         = 3.6 
+# Pepper levels                                      = 925723 523994 471595 
+# Saturation levels                                  = 1144578 1144578 1144578 
+# No bias subtraction enabled.
+# No dark subtraction enabled.
+# No flat fielding enabled.
+# No bad pixel frame supplied.
+# Using constant gain                                = 0.16 
+# Using constant readout noise                       = 4.3 
+# Sky estimation method                              = clipped_mean 
+# Sky error estimation method                        = variance 
+# Sky RMS clip threshold                             = 3 
+# Name of file list                                  = @ucms_r.txt 
+# 
+# For each CCD of each frame reduced, the following information is printed:
+# 
+# name/number mjd flag expose ccd fwhm beta [naper x y xm ym exm eym counts sigma sky nsky nrej worst error_flag]*num_aper
+# 
+# where 'name/number' is either the file name for ucm file list data or the frame number for data from the .dat files,
+# 'mjd' is the Modified Julian Date (UTC) at the centre of the exposure. MJD = JD-2400000.5, no correction for light travel
+# etc is made on the basis that the key thing is have a well-understood & correct time. 'flag' is an indication of whether
+# the time is thought to be reliable or not (1=OK,0=NOK). 'expose' is the exposure time in seconds. 'ccd' is the ccd number
+# (1=red,2=green,3=uv). 'fwhm' is the fitted FWHM, =0 if no fit made. 'beta' is the fitted Moffat exponent, 0 if no Moffat fit is made.
+# 'naper' = aperture number, ('x','y') = aperture position actually used, ('xm', 'ym') = the measured aperture position (0,0) for
+# invalid and/or linked apertures, ('exm', 'eym') = the 1-sigma uncertainty in the measured aperture position (-1,-1) for invalid
+# and/or linked apertures. 'counts' = estimated target counts, 'sigma' = 1-sigma uncertainty. 'sky' = sky background in counts,
+# 'nsky' = the number of sky pixels available, 'nrej' = number of sky pixels rejected, 'worst' is the value of the worst bad pixel
+# within the star aperture (0 is OK) and 'error_flag' is one of a number of codes with the following possibilities:
+# 
+# Error code = 0, meaning: All OK
+# Error code = 1, meaning: At least one attempt was made to remove a cosmic ray from the star aperture (non-fatal)
+# Error code = 2, meaning: Sky annulus overlaps edge of data window (non-fatal)
+# Error code = 3, meaning: Sky annulus overlaps edge of data window and at least one cosmic ray was zapped (non-fatal)
+# Error code = 4, meaning: Sky < -5: may indicate a bad bias frame which leads to underestimated errors in the photon case (non-fatal).
+# Error code = 5, meaning: Counts in at least one pixel of the aperture exceeds peppering level for the CCD (non-fatal)
+# Error code = 6, meaning: No sky pixels (non-fatal, although could be bad!)
+# Error code = 7, meaning: Aperture has extra apertures but these are ignored for optimal extraction (non-fatal)
+# Error code = 8, meaning: Counts in at least one pixel of the aperture exceeds saturation level for the CCD (non-fatal, but bad!)
+# Error code = 9, meaning: Aperture lies outside all data windows (fatal)
+# Error code = 10, meaning: Target aperture overlaps edge of data window (fatal)
+# Error code = 11, meaning: Aperture has been invalidated (fatal)
+# Error code = 12, meaning: Blue frame is junk (fatal)
+# 
+# For the fatal codes, 0. -1 0. 0 will be printed in place of "counts sigma sky nrej"
+# The square bracketed section is repeated for each aperture.
+# 
+rALGd200027_2.ucm 60054.9951620370 1 120.00000 1   5.370   2.324  1 1058.3350 1023.8102 1058.3351 1023.8102  0.0442  0.0443    85928.3  1064.9   1584.56 443    1  0  0  2  889.0058  606.5135  889.0057  606.5135  0.0128  0.0126   481540.2  2107.3   1620.53 430    0  0  0  3 1222.2134 1491.7719 1222.2134 1491.7719  0.0054  0.0055  1939694.4  4024.7   1700.05 442    0  0  0  4 1720.3268 1148.6666 1720.3268 1148.6666  0.0087  0.0088   868306.9  2732.3   1629.47 441    3  0  0
+rALGd200030_2.ucm 60055.0020254629 1 120.00000 1   8.224   2.422  1 1058.5210 1023.7562 1058.5210 1023.7562  0.0869  0.0870    87902.5  1325.1   1573.33 660    5  0  0  2  889.1798  606.3931  889.1798  606.3931  0.0222  0.0221   480905.9  2223.8   1607.88 657    2  0  0  3 1222.3821 1491.7380 1222.3821 1491.7380  0.0088  0.0088  1948526.0  4087.2   1673.03 656    3  0  0  4 1720.4933 1148.6924 1720.4933 1148.6924  0.0147  0.0148   871172.2  2854.5   1618.66 655    1  0  0
+rALGd200033_2.ucm 60055.0087615741 1 120.00000 1   4.292   2.095  1 1058.2679 1023.4311 1058.2679 1023.4312  0.0334  0.0330    79293.4   944.3   1524.52 734    3  0  0  2  888.9293  606.1221  888.9293  606.1221  0.0105  0.0101   440217.4  1943.6   1567.71 739    1  0  0  3 1222.1591 1491.4035 1222.1591 1491.4036  0.0045  0.0045  1821710.9  3883.7   1669.15 738    2  0  0  4 1720.2135 1148.2801 1720.2135 1148.2802  0.0070  0.0070   817095.2  2621.6   1592.27 735   13  0  0
+rALGd200036_2.ucm 60055.0154976852 1 120.00000 1   5.534   2.266  1 1058.1345 1023.6983 1058.1345 1023.6983  0.0491  0.0491    78668.6  1058.5   1473.65 391    1  0  0  2  888.8228  606.2706  888.8228  606.2706  0.0132  0.0129   478054.8  2096.4   1506.22 393    3  0  0  3 1221.9654 1491.5026 1221.9653 1491.5026  0.0056  0.0058  1904620.8  3972.9   1589.26 390    1  0  0  4 1720.0163 1148.4604 1720.0162 1148.4604  0.0090  0.0093   852188.9  2733.8   1518.74 390    0  0  0
+rALGd200048_2.ucm 60055.0520833333 1 120.00000 1   3.878   2.424  1 1056.7195 1023.5718 1056.7195 1023.5718  0.0299  0.0295    71157.3   880.2   1373.87 805    1  0  0  2  887.3159  606.1446  887.3159  606.1446  0.0086  0.0080   480975.2  2028.8   1407.33 805    2  0  0  3 1220.5344 1491.5095 1220.5344 1491.5095  0.0038  0.0038  1934066.9  3980.7   1482.57 816    2  0  0  4 1718.5699 1148.5386 1718.5699 1148.5386  0.0060  0.0059   858482.0  2667.6   1428.88 812    3  0  0
+rALGd200051_2.ucm 60055.0579282407 1 120.00000 1   4.100   2.325  1 1056.5826 1023.5568 1056.5826 1023.5568  0.0322  0.0318    72434.7   890.2   1425.87 788    2  0  0  2  887.2647  606.1799  887.2647  606.1799  0.0092  0.0086   478760.2  2027.3   1463.57 783    4  0  0  3 1220.5146 1491.5024 1220.5145 1491.5024  0.0041  0.0040  1908580.2  3965.7   1540.03 798    2  0  0  4 1718.5127 1148.5087 1718.5127 1148.5087  0.0066  0.0064   838958.4  2639.7   1477.18 797    3  0  0
+rALGd200054_2.ucm 60055.0653356481 1 120.00000 1   4.188   2.479  1 1056.4050 1023.6090 1056.4050 1023.6089  0.0308  0.0303    80209.6   930.8   1436.77 770    4  0  0  2  887.0519  606.1960  887.0519  606.1960  0.0091  0.0086   494786.0  2070.2   1468.22 759    0  0  0  3 1220.2983 1491.5153 1220.2982 1491.5154  0.0041  0.0041  1945856.1  3999.9   1538.96 762    1  0  0  4 1718.2885 1148.4832 1718.2886 1148.4832  0.0065  0.0064   869984.4  2689.5   1479.82 761    2  0  0
+rALGd200057_2.ucm 60055.0716898148 1 120.00000 1   4.112   2.489  1 1056.2145 1023.6218 1056.2145 1023.6218  0.0288  0.0279    86254.7   961.9   1461.15 782    3  0  0  2  886.8761  606.3054  886.8760  606.3054  0.0094  0.0087   476083.2  2018.6   1500.10 779    0  0  0  3 1220.0860 1491.5558 1220.0861 1491.5558  0.0041  0.0039  1955211.8  4006.9   1566.71 779    5  0  0  4 1718.0726 1148.5737 1718.0726 1148.5737  0.0065  0.0062   865886.2  2681.6   1511.26 778    2  0  0
